@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-11 22:35:51.351031",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sale_from",
+  "section_break_8zcyx",
+  "product",
+  "section_break_yvu02",
+  "customer",
+  "column_break_oc7o8",
+  "customer_name",
+  "section_break_xlftf",
+  "liters",
+  "column_break_rxide",
+  "rate",
+  "section_break_7govz",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "sale_from",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sale From",
+   "options": "\nProducts\nCustomer"
+  },
+  {
+   "depends_on": "eval:doc.sale_from == 'Products'",
+   "fieldname": "section_break_8zcyx",
+   "fieldtype": "Section Break",
+   "read_only_depends_on": "eval:doc.sale_from == 'Products'"
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval:doc.sale_from == 'Customer'",
+   "fieldname": "section_break_yvu02",
+   "fieldtype": "Section Break",
+   "read_only_depends_on": "eval:doc.sale_from == 'Customer'"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_oc7o8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "section_break_xlftf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "liters",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Liters"
+  },
+  {
+   "fieldname": "column_break_rxide",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "section_break_7govz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-27 18:39:34.418999",
+ "modified_by": "Administrator",
+ "module": "Petro",
+ "name": "Day Book Sales",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
